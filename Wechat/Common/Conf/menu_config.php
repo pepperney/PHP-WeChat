@@ -1,0 +1,35 @@
+<?php 
+$menu_config = '{
+     "button":[
+     {    
+          "type":"click",
+          "name":"kick",
+          "key":"V1001_TODAY_MUSIC"
+      },
+      {
+           "type":"view",
+           "name":"主页",
+           "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb8e38e0360a34680&redirect_uri=http%3a%2f%2f1.pepper.applinzi.com%2findex%2fmain&scope=snsapi_base&response_type=code&state=STATE#wechat_redirect"
+      },
+      {
+           "name":"菜单",
+           "sub_button":[
+           {    
+               "type":"view",
+               "name":"历史消息",
+               "url":"http://mp.weixin.qq.com/mp/getmasssendmsg?__biz=MzIxMjI3NTIxMA==#wechat_webview_type=1&wechat_redirect"
+              
+            },
+            {
+               "type":"view",
+               "name":"百度",
+               "url":"https://www.baidu.com"
+            },
+            {
+               "type":"click",
+               "name":"联系我们",
+               "key":"connect"
+            }]
+       }]
+ }';
+?>

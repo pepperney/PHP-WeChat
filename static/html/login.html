@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>登录页面</title>
+        <link href="../css/login.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		
+        <script type="text/javascript">
+	        function submitForm(){
+				var username = $("#userName").val();
+				if(username==""){
+					alert("用户名不能为空");
+					return false;
+				}
+				var password = $("#userPwd").val();
+				if(password==""){
+					alert("密码不能为空");
+					return false;
+				}
+				var jsondate = {"userName":username,"userPwd":password};
+				$.ajax({
+					url:"../MyProject/login",
+					type:"POST",
+					contentType: "application/json; charset=utf-8",
+					async: false,
+					dataType:"json",
+					data:JSON.stringify(jsondate),
+					success:function(re){
+                      document.write(re.desc);
+					}
+				});
+			}
+	        
+
+        </script>
+    </head>
+    <body class="bdimg">
+        <form>
+            <div class="triangle"><span></span></div>
+            <div class="username"><span><img src="../images/User.png" alt="" /></span><input type="text" id="userName"  placeholder="用户名" /></div>
+            <div class="userpassword"><span><img src="../images/Locked.png" alt="" /></span><input id="userPwd" type="password" placeholder="用户密码" /></div>
+            <div class="userlogin"><button onclick="submitForm();return false;" >登录</button> </div>
+        </form>
+    </body>
+</html>
